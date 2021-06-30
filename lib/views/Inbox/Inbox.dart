@@ -10,6 +10,7 @@ class Inbox extends StatefulWidget {
 class _InboxState extends State<Inbox> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+        child: Text("Inbox", style: Theme.of(context).textTheme.headline1));
   }
 }
