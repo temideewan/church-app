@@ -1,5 +1,5 @@
 import 'package:church/theme/colorLibrary.dart';
-import 'package:church/views/Events/Events.dart';
+import 'package:church/views/Events/EventsHome.dart';
 import 'package:church/views/Home/Home.dart';
 import 'package:church/views/Inbox/Inbox.dart';
 import 'package:church/views/Info/Info.dart';
@@ -40,7 +40,7 @@ class TabNavigationItem {
                   fontStyle: FontStyle.normal)),
         ),
         TabNavigationItem(
-          page: Events(),
+          page: EventsHome(),
           icon: Icon(Icons.gavel_rounded, size: 25.0),
           title: Text("Bid central",
               style: TextStyle(
@@ -51,8 +51,8 @@ class TabNavigationItem {
         ),
         TabNavigationItem(
           page: Inbox(),
-          icon: Icon(Icons.emoji_events_rounded, size: 25.0),
-          title: Text("Winners",
+          icon: Icon(Icons.mail_sharp, size: 25.0),
+          title: Text("Inbox",
               style: TextStyle(
                   fontFamily: 'History',
                   fontSize: 14.0,
