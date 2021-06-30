@@ -1,9 +1,16 @@
 import 'package:church/theme/colorLibrary.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 
-class Upcoming extends StatelessWidget {
+class Upcoming extends StatefulWidget {
   const Upcoming({Key? key}) : super(key: key);
 
+  @override
+  _UpcomingState createState() => _UpcomingState();
+}
+
+class _UpcomingState extends State<Upcoming> {
+  bool isFalse = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -68,7 +75,7 @@ class Upcoming extends StatelessWidget {
                         children: [
                           Text('Prayer summit Day 5',
                               style: Theme.of(context).textTheme.headline2),
-                          SizedBox(height: 7.0),
+                          SizedBox(height: 5.0),
                           Container(
                             width: 200,
                             child: Text(
@@ -110,7 +117,7 @@ class Upcoming extends StatelessWidget {
                             Row(
                               children: [
                                 Container(
-                                    width: 168,
+                                    width: 148,
                                     height: 31,
                                     decoration: BoxDecoration(
                                         color: ColorLibrary.primaryGreen,
@@ -121,9 +128,28 @@ class Upcoming extends StatelessWidget {
                                           style: Theme.of(context)
                                               .textTheme
                                               .button),
-                                    ))
+                                    )),
+                                SizedBox(width: 3.0),
                                 // the button,
                                 // the switcher
+                                FlutterSwitch(
+                                  activeColor: ColorLibrary.primaryGreen,
+                                  width: 56.0,
+                                  height: 24.0,
+                                  toggleSize: 25.0,
+                                  activeToggleColor: Colors.white,
+                                  inactiveToggleColor:
+                                      ColorLibrary.primaryGreen,
+                                  value: isFalse,
+                                  inactiveColor: Color(0xffEDF6FF),
+                                  borderRadius: 30.0,
+                                  padding: 4.0,
+                                  onToggle: (val) {
+                                    setState(() {
+                                      isFalse = val;
+                                    });
+                                  },
+                                ),
                               ],
                             )
                           ],
@@ -134,6 +160,7 @@ class Upcoming extends StatelessWidget {
                 )
               ])),
           Divider(
+            height: 20,
             color: ColorLibrary.dividerColor,
           )
         ],
