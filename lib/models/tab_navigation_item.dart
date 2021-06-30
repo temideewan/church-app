@@ -1,3 +1,4 @@
+import 'package:church/theme/colorLibrary.dart';
 import 'package:church/views/Events/Events.dart';
 import 'package:church/views/Home/Home.dart';
 import 'package:church/views/Inbox/Inbox.dart';
@@ -29,8 +30,9 @@ class TabNavigationItem {
         ),
         TabNavigationItem(
           page: Info(),
-          icon: Icon(Icons.favorite, size: 25.0),
-          title: Text("Watchlist",
+          icon: Image.asset('assets/images/info.png',
+              width: 25.0, height: 25.0, color: ColorLibrary.primaryGreen),
+          title: Text("Info",
               style: TextStyle(
                   fontFamily: 'Open Sans',
                   fontSize: 14.0,

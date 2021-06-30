@@ -65,7 +65,7 @@ class _InfoState extends State<Info> {
                                   decoration: BoxDecoration(
                                       color: ColorLibrary.primaryGreen,
                                       borderRadius: BorderRadius.circular(6.0)),
-                                  child: Text('More detail',
+                                  child: Text('More Detail',
                                       textAlign: TextAlign.center,
                                       style: Theme.of(context)
                                           .textTheme
@@ -121,7 +121,7 @@ class _InfoState extends State<Info> {
                                   decoration: BoxDecoration(
                                       color: ColorLibrary.primaryGreen,
                                       borderRadius: BorderRadius.circular(6.0)),
-                                  child: Text('More detail',
+                                  child: Text('More Detail',
                                       textAlign: TextAlign.center,
                                       style: Theme.of(context)
                                           .textTheme

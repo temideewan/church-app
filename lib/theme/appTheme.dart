@@ -34,8 +34,8 @@ ThemeData createTheme() {
             fontSize: 14),
         bodyText1: TextStyle(
             color: ColorLibrary.paraDark,
-            fontFamily: 'Montserrat-Bold',
-            fontWeight: FontWeight.w600,
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.w500,
             fontSize: 11.0),
         bodyText2: TextStyle(
             color: ColorLibrary.textMuted,
