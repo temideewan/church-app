@@ -88,36 +88,14 @@ class _SecondEventsState extends State<SecondEvents> {
                 SizedBox(height: 32),
                 Container(
                     width: double.infinity,
-                    padding: EdgeInsets.only(left: 1.0, right: 5.0),
+                    padding: EdgeInsets.only(left: 5.0, right: 5.0),
                     child: Column(
                       children: [
                         Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('About this event',
+                              Text('About the department',
                                   style: Theme.of(context).textTheme.headline3),
-                              Row(
-                                children: [
-                                  for (var i = 0; i < 4; i++)
-                                    Row(
-                                      children: [
-                                        Image(
-                                            width: 12,
-                                            height: 12,
-                                            image: AssetImage(
-                                                'assets/images/colored_star.png')),
-                                        SizedBox(
-                                          width: 4.0,
-                                        )
-                                      ],
-                                    ),
-                                  Image(
-                                      width: 12,
-                                      height: 12,
-                                      image: AssetImage(
-                                          'assets/images/normal_star.png')),
-                                ],
-                              )
                             ]),
                         SizedBox(height: 20.0),
                         RichText(
@@ -142,12 +120,15 @@ class _SecondEventsState extends State<SecondEvents> {
                       ],
                     )),
                 SizedBox(height: 19.0),
-                Text('Next Schedules',
-                    textAlign: TextAlign.start,
-                    style: Theme.of(context).textTheme.headline3),
+                Padding(
+                  padding: const EdgeInsets.only(left: 5.0),
+                  child: Text('Next Schedules',
+                      textAlign: TextAlign.start,
+                      style: Theme.of(context).textTheme.headline3),
+                ),
                 Container(
                     width: double.infinity,
-                    padding: EdgeInsets.only(top: 10.0, right: 50.0),
+                    padding: EdgeInsets.only(top: 10.0, right: 50.0, left: 5.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
