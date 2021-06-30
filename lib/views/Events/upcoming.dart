@@ -133,13 +133,12 @@ class _UpcomingState extends State<Upcoming> {
                                 // the button,
                                 // the switcher
                                 FlutterSwitch(
-                                  activeColor: ColorLibrary.primaryGreen,
+                                  activeColor: ColorLibrary.toggleGreen,
                                   width: 56.0,
                                   height: 24.0,
                                   toggleSize: 25.0,
                                   activeToggleColor: Colors.white,
-                                  inactiveToggleColor:
-                                      ColorLibrary.primaryGreen,
+                                  inactiveToggleColor: ColorLibrary.toggleGreen,
                                   value: isFalse,
                                   inactiveColor: Color(0xffEDF6FF),
                                   borderRadius: 30.0,

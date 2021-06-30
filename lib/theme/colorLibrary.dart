@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class ColorLibrary {
   static const Color primaryGreen = Color(0xff85A329);
   static const Color primaryGreenDark = Color(0xff40510D);
+  static const Color toggleGreen = Color(0xFFC2DE6A);
   static const Color primaryHeading = Color(0xff3A3C6A);
   static const Color textColor = Color(0xff3C3E58);
   static const Color textColorDark = Color(0xff16183B);
