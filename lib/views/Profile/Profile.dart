@@ -1,7 +1,6 @@
 import 'package:church/theme/colorLibrary.dart';
 import 'package:church/views/Inbox/Inbox.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
 
 class Profile extends StatefulWidget {
   @override
