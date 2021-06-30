@@ -12,4 +12,7 @@ class ColorLibrary {
   static const Color accentColor = Color(0xffBEB246);
   static const Color lightGrey = Color(0xffF2F1F7);
   static const Color teal = Color(0xffB2E5F5);
+  static const Color dividerColor = Color(0xFFffF0F1FA);
+  static const Color dateContainer = Color(0x1A585DF9);
+  static const Color dateText = Color(0xFFB7B7B7);
 }

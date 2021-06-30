@@ -1,15 +1,14 @@
 import 'package:church/theme/colorLibrary.dart';
-import 'package:church/views/Events/upcoming.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class EventsHome extends StatefulWidget {
+  const EventsHome({Key? key}) : super(key: key);
 
   @override
-  _HomeState createState() => _HomeState();
+  _EventsHomeState createState() => _EventsHomeState();
 }
 
-class _HomeState extends State<Home> {
+class _EventsHomeState extends State<EventsHome> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -27,9 +26,9 @@ class _HomeState extends State<Home> {
                 child: Container(
                   width: 330.0,
                   margin:
-                      EdgeInsets.only(left: 10.0, bottom: 15.0, right: 10.0),
+                      EdgeInsets.only(left: 10.0, bottom: 10.0, right: 10.0),
                   padding:
-                      EdgeInsets.only(top: 2, bottom: 2, left: 7, right: 7.0),
+                      EdgeInsets.only(top: 6, bottom: 5, left: 7, right: 7.0),
                   decoration: BoxDecoration(
                       color: Color(0xFFF5F5F5),
                       borderRadius: BorderRadius.circular(15.0)),
@@ -40,11 +39,7 @@ class _HomeState extends State<Home> {
                       indicatorPadding: EdgeInsets.symmetric(
                           horizontal: 10.0, vertical: 10.0),
                       indicator: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(10.0),
-                              topRight: Radius.circular(10.0),
-                              bottomLeft: Radius.circular(10.0),
-                              bottomRight: Radius.circular(10.0)),
+                          borderRadius: BorderRadius.circular(80),
                           color: Colors.white,
                           boxShadow: [
                             BoxShadow(
@@ -92,7 +87,7 @@ class _HomeState extends State<Home> {
             ),
           ),
           body: TabBarView(children: [
-            Upcoming(),
+            Icon(Icons.apps),
             Icon(Icons.movie),
             Icon(Icons.games),
           ]),

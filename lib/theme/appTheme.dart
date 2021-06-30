@@ -52,5 +52,20 @@ ThemeData createTheme() {
             fontFamily: 'Nunito-Bold',
             fontWeight: FontWeight.w600,
             fontSize: 16.0),
+        headline4: TextStyle(
+            color: ColorLibrary.primaryGreen,
+            fontFamily: 'Poppins-Bold',
+            fontWeight: FontWeight.w900,
+            fontSize: 13.0),
+        caption: TextStyle(
+            color: ColorLibrary.dateText,
+            fontFamily: 'Poppins-Bold',
+            fontWeight: FontWeight.w500,
+            fontSize: 13.0),
+        button: TextStyle(
+            color: Colors.white,
+            fontFamily: 'Montserrat-SemiBold',
+            fontWeight: FontWeight.w600,
+            fontSize: 12.0),
       ));
 }
