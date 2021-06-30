@@ -1,14 +1,14 @@
 import 'package:church/theme/colorLibrary.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class SecondEvents extends StatefulWidget {
+  const SecondEvents({Key? key}) : super(key: key);
 
   @override
-  _HomeState createState() => _HomeState();
+  _SecondEventsState createState() => _SecondEventsState();
 }
 
-class _HomeState extends State<Home> {
+class _SecondEventsState extends State<SecondEvents> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
