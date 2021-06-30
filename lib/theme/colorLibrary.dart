@@ -10,6 +10,6 @@ class ColorLibrary {
   static const Color textMuted = Color(0xffb7b7b7);
   static const Color textMutedDark = Color(0xff9f9f9f);
   static const Color accentColor = Color(0xffBEB246);
-  static const Color lightGreen = Color(0xffF2F1F7);
+  static const Color lightGrey = Color(0xffF2F1F7);
   static const Color teal = Color(0xffB2E5F5);
 }
