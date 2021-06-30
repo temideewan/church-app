@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: createTheme(),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
       routes: {
         '/': (context) => TabsPage(),
       },

@@ -61,62 +61,75 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Montserrat dark
+    - family: Montserrat-dark
       fonts:
-        - asset: fonts/Montserrat-Black.ttf
+        - asset: assets/fonts/Montserrat-Black.ttf
           weight: 700
-    - family: Montserrat Bold
+
+    - family: Montserrat-Bold
       fonts:
-        - asset: fonts/Montserrat-Bold.ttf
-        - weight: 700
-    - family: Montserrat Medium
+        - asset: assets/fonts/Montserrat-Bold.ttf
+          weight: 700
+
+    - family: Montserrat-Medium
       fonts:
-        - asset: fonts/Montserrat-SemiBold.ttf
-        - weight: 600
+        - asset: assets/fonts/Montserrat-SemiBold.ttf
+          weight: 600
+
     - family: Montserrat
       fonts:
-        - asset: fonts/Montserrat-Regular.ttf
-        - weight: 500
+        - asset: assets/fonts/Montserrat-Regular.ttf
+          weight: 500
+
     - family: Montserrat
       fonts:
-        - asset: fonts/Montserrat-Regular.ttf
-        - weight: 400
+        - asset: assets/fonts/Montserrat-Regular.ttf
+          weight: 400
+
     - family: Helvetica
       fonts:
-        - asset: fonts/Helvetica.ttf
-        - weight: 400
-    - family: Helvetica Bold
+        - asset: assets/fonts/Helvetica.ttf
+          weight: 400
+
+    - family: Helvetica-Bold
       fonts:
-        - asset: fonts/Helvetica-Bold.ttf
-        - weight: 700
-    - family: Helvetica Bold
+        - asset: assets/fonts/Helvetica-Bold.ttf
+          weight: 700
+
+    - family: Helvetica-Bold
       fonts:
-        - asset: fonts/Helvetica-Bold.ttf
-        - weight: 600
+        - asset: assets/fonts/Helvetica-Bold.ttf
+          weight: 600
+
     - family: Helvetica 
       fonts:
-        - asset: fonts/Helvetica.ttf
-        - weight: 400
+        - asset: assets/fonts/Helvetica.ttf
+          weight: 400
+
     - family: Poppins 
       fonts:
-        - asset: fonts/Poppins.ttf
-        - weight: 400
-    - family: Poppins Bold
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
+
+    - family: Poppins-Bold
       fonts:
-        - asset: fonts/Poppins-Bold.ttf
-        - weight: 700
-    - family: Poppins Bold
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
+
+    - family: Poppins-Bold
       fonts:
-        - asset: fonts/Poppins-SemiBold.ttf
-        - weight: 600
-    - family: Poppins Medium
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+
+    - family: Poppins-Medium
       fonts:
-        - asset: fonts/Poppins-Medium.ttf
-        - weight: 500
-    - family: Poppins Medium
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+          
+    - family: Poppins-Medium
       fonts:
-        - asset: fonts/Poppins-Medium.ttf
-        - weight: 500
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
