@@ -85,7 +85,7 @@ class _EventsState extends State<Events> {
                             )),
                         Container(
                           width: double.infinity,
-                          padding: EdgeInsets.only(left: 20.0, top: 17.0),
+                          padding: EdgeInsets.only(left: 27.0, top: 17.0),
                           child: Text('Church Premises',
                               style: Theme.of(context)
                                   .textTheme

@@ -69,7 +69,7 @@ class _SecondEventsState extends State<SecondEvents> {
                             )),
                         Container(
                             width: double.infinity,
-                            padding: EdgeInsets.only(left: 20.0, top: 17.0),
+                            padding: EdgeInsets.only(left: 23.0, top: 17.0),
                             child: Row(
                               children: [
                                 Image(

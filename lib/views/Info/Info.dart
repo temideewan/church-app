@@ -41,8 +41,8 @@ class _InfoState extends State<Info> {
                           child: Container(
                             width: 147,
                             height: 115,
-                            padding:
-                                EdgeInsets.only(top: 20, left: 16, bottom: 8),
+                            padding: EdgeInsets.only(
+                                top: 20, left: 16, bottom: 8, right: 10),
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(5.0)),
@@ -97,8 +97,8 @@ class _InfoState extends State<Info> {
                           child: Container(
                             width: 147,
                             height: 115,
-                            padding:
-                                EdgeInsets.only(top: 20, left: 16, bottom: 8),
+                            padding: EdgeInsets.only(
+                                top: 20, left: 16, bottom: 8, right: 16),
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(5.0)),
