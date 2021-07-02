@@ -112,7 +112,7 @@ class _ProfileState extends State<Profile> {
                                     fontSize: 13.0,
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FontStyle.normal,
-                                    color: Color(0xFF092C4C))),
+                                    color: ColorLibrary.primaryGreenDark)),
                             IconButton(
                                 icon: Icon(Icons.arrow_forward_ios,
                                     color: Colors.black, size: 15.0),

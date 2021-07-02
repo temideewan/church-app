@@ -20,7 +20,10 @@ class TabNavigationItem {
   static List<TabNavigationItem> get items => [
         TabNavigationItem(
           page: Home(),
-          icon: Icon(Icons.home, size: 25.0),
+          icon: Image(
+              image: AssetImage('assets/images/tab_brand.png'),
+              width: 28,
+              height: 28),
           title: Text("Home",
               style: TextStyle(
                   fontFamily: 'Open Sans',
@@ -30,8 +33,7 @@ class TabNavigationItem {
         ),
         TabNavigationItem(
           page: Info(),
-          icon: Image.asset('assets/images/info.png',
-              width: 25.0, height: 25.0, color: ColorLibrary.primaryGreen),
+          icon: Icon(Icons.info_outline_rounded, size: 28.0),
           title: Text("Info",
               style: TextStyle(
                   fontFamily: 'Open Sans',
@@ -41,8 +43,8 @@ class TabNavigationItem {
         ),
         TabNavigationItem(
           page: EventsHome(),
-          icon: Icon(Icons.gavel_rounded, size: 25.0),
-          title: Text("Bid central",
+          icon: Icon(Icons.calendar_today_rounded, size: 25.0),
+          title: Text("Events",
               style: TextStyle(
                   fontFamily: 'Open Sans',
                   fontSize: 14.0,
@@ -61,7 +63,7 @@ class TabNavigationItem {
         ),
         TabNavigationItem(
           page: Profile(),
-          icon: Icon(Icons.more_vert, size: 25.0),
+          icon: Icon(Icons.account_circle, size: 30.0),
           title: Text("Actions",
               style: TextStyle(
                   fontFamily: 'Open Sans',
