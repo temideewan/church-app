@@ -7,35 +7,64 @@ ThemeData createTheme() {
       dividerColor: Color(0xFFF0F1FA),
       backgroundColor: Color(0xffffffff),
       accentColor: ColorLibrary.primaryGreen,
+      appBarTheme: AppBarTheme(
+          backgroundColor: Colors.white,
+          elevation: 0.0,
+          textTheme: TextTheme(
+              headline1: TextStyle(
+                  color: ColorLibrary.textColorDark,
+                  fontFamily: "Montserrat-Medium",
+                  fontWeight: FontWeight.w600,
+                  fontSize: 21))),
       textTheme: TextTheme(
         headline1: TextStyle(
             color: Colors.white,
-            fontFamily: 'Montserrat dark',
+            fontFamily: 'Montserrat-dark',
             fontSize: 30,
             fontWeight: FontWeight.w700),
         headline2: TextStyle(
             color: ColorLibrary.primaryHeading,
-            fontFamily: "Helvetica Bold",
+            fontFamily: "Helvetica-Bold",
             fontSize: 19.0,
             fontWeight: FontWeight.w700),
         headline3: TextStyle(
             color: ColorLibrary.textColorDark,
-            fontFamily: "Montserrat Medium",
+            fontFamily: "Montserrat-Medium",
             fontWeight: FontWeight.w600,
             fontSize: 14),
         bodyText1: TextStyle(
             color: ColorLibrary.paraDark,
-            fontFamily: 'Montserrat Bold',
-            fontWeight: FontWeight.w600,
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.w500,
             fontSize: 11.0),
         bodyText2: TextStyle(
             color: ColorLibrary.textMuted,
-            fontFamily: 'Montserrat Bold',
+            fontFamily: 'Montserrat-Bold',
             fontWeight: FontWeight.w600,
             fontSize: 10.0),
         subtitle1: TextStyle(
             color: ColorLibrary.textColorDark,
-            fontFamily: 'Montserrat Bold',
+            fontFamily: 'Montserrat-Bold',
+            fontWeight: FontWeight.w600,
+            fontSize: 12.0),
+        subtitle2: TextStyle(
+            color: ColorLibrary.textColorDark,
+            fontFamily: 'Nunito-Bold',
+            fontWeight: FontWeight.w600,
+            fontSize: 16.0),
+        headline4: TextStyle(
+            color: ColorLibrary.primaryGreen,
+            fontFamily: 'Poppins-Bold',
+            fontWeight: FontWeight.w900,
+            fontSize: 13.0),
+        caption: TextStyle(
+            color: ColorLibrary.dateText,
+            fontFamily: 'Poppins-Bold',
+            fontWeight: FontWeight.w500,
+            fontSize: 13.0),
+        button: TextStyle(
+            color: Colors.white,
+            fontFamily: 'Montserrat-SemiBold',
             fontWeight: FontWeight.w600,
             fontSize: 12.0),
       ));

@@ -1,4 +1,5 @@
 import 'package:church/theme/appTheme.dart';
+import 'package:church/views/tabs/tabsPage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: createTheme(),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: {
+        '/': (context) => TabsPage(),
+      },
     );
   }
 }
