@@ -48,9 +48,10 @@ class _EventsHomeState extends State<EventsHome>
                 centerTitle: true,
                 bottom: PreferredSize(
                   preferredSize: Size.fromHeight(60.0),
-                  child: Center(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.0),
                     child: Container(
-                      width: 330.0,
+                      width: MediaQuery.of(context).size.width,
                       margin: EdgeInsets.only(
                           left: 10.0, bottom: 15.0, right: 10.0),
                       padding: EdgeInsets.only(
