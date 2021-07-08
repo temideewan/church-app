@@ -42,11 +42,11 @@ class _HomeState extends State<Home> {
                     child: Stack(
                       children: [
                         Positioned(
-                            top: 3,
+                            top: 1,
                             right: -40,
                             child: Image(
-                                width: 237,
-                                height: 185,
+                                width: MediaQuery.of(context).size.width - 120,
+                                height: MediaQuery.of(context).size.width - 170,
                                 image: AssetImage('assets/images/Graph.png'))),
                         Positioned(
                             top: 40,
@@ -57,7 +57,7 @@ class _HomeState extends State<Home> {
                                 image: AssetImage('assets/images/bell.png'))),
                         Positioned(
                             top: 45,
-                            left: 25,
+                            left: 28,
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Colors.white,
@@ -73,8 +73,10 @@ class _HomeState extends State<Home> {
                         Positioned(
                           top: 110,
                           left: 30,
+                          right: 0,
                           child: Container(
-                            width: 330,
+                            width: MediaQuery.of(context).size.width,
+                            // padding: EdgeInsets.only(right: 20),
                             child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -88,7 +90,7 @@ class _HomeState extends State<Home> {
                                             color: Color(0xffB2E5F5)),
                                   ),
                                   Container(
-                                    width: 333,
+                                    width: MediaQuery.of(context).size.width,
                                     child: Text(
                                         'Welcome to Goshen the Choice land',
                                         style: Theme.of(context)
@@ -96,7 +98,11 @@ class _HomeState extends State<Home> {
                                             .headline1),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding: const EdgeInsets.only(
+                                        left: 8.0,
+                                        top: 8.0,
+                                        right: 10.0,
+                                        bottom: 8.0),
                                     child: Divider(color: Colors.black54),
                                   ),
                                   Wrap(
@@ -152,7 +158,7 @@ class _HomeState extends State<Home> {
                   left: 0,
                   right: 0,
                   child: Container(
-                      padding: EdgeInsets.only(top: 22, left: 23, right: 22),
+                      padding: EdgeInsets.only(top: 22, left: 20, right: 20),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
@@ -186,13 +192,15 @@ class _HomeState extends State<Home> {
                           SizedBox(height: 20.0),
                           Container(
                             height: 240,
+                            padding: EdgeInsets.only(bottom: 5.0),
+                            width: double.infinity,
                             child: ListView.separated(
                                 shrinkWrap: true,
                                 padding: EdgeInsets.zero,
                                 itemBuilder: (context, index) {
                                   return Container(
                                       width: double.infinity,
-                                      height: 135,
+                                      height: 145,
                                       child: Row(children: [
                                         Container(
                                             width: 83,
