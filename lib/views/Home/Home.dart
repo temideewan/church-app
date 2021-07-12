@@ -1,5 +1,9 @@
 import 'package:church/models/homeItems.dart';
 import 'package:church/theme/colorLibrary.dart';
+import 'package:church/views/Events/EventsHome.dart';
+import 'package:church/views/Inbox/Inbox.dart';
+import 'package:church/views/Info/Info.dart';
+import 'package:church/views/tabs/tabsPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 
@@ -12,14 +16,16 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   List<HomeItem> items = [
-    new HomeItem(image: 'assets/images/completed.png', text: 'Check in'),
-    new HomeItem(image: 'assets/images/white_i.png', text: 'Info board'),
-    new HomeItem(image: 'assets/images/calendar_events.png', text: 'Events'),
-    new HomeItem(image: 'assets/images/sax.png', text: '1440'),
-    new HomeItem(image: 'assets/images/cake.png', text: 'Birthday Board'),
-    new HomeItem(image: 'assets/images/pulpit.png', text: 'Sermons'),
-    new HomeItem(image: 'assets/images/department.png', text: 'Departments'),
-    new HomeItem(image: 'assets/images/help.png', text: 'Help?'),
+    new HomeItem(
+        image: 'assets/images/completed.png', text: 'Check in', page: Inbox()),
+    new HomeItem(
+        image: 'assets/images/white_i.png', text: 'Info board', page: Info()),
+    new HomeItem(
+        image: 'assets/images/calendar_events.png',
+        text: 'Events',
+        page: EventsHome()),
+    new HomeItem(
+        image: 'assets/images/sax.png', text: '1440', page: TabsPage()),
   ];
 
   bool isFalse = false;
@@ -46,7 +52,7 @@ class _HomeState extends State<Home> {
                   child: Container(
                       color: ColorLibrary.primaryGreen,
                       width: MediaQuery.of(context).size.width,
-                      height: 500,
+                      height: MediaQuery.of(context).size.height - 100,
                       child: Stack(
                         children: [
                           Positioned(
@@ -123,42 +129,52 @@ class _HomeState extends State<Home> {
                                       runSpacing: 12,
                                       children: [
                                         for (HomeItem item in items)
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              Container(
-                                                width: 45,
-                                                height: 50,
-                                                decoration: BoxDecoration(
-                                                    color: ColorLibrary
-                                                        .primaryGreenDark,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            4)),
-                                                child: Center(
-                                                  child: Image(
-                                                      width: 25,
-                                                      height: 25,
-                                                      image: AssetImage(
-                                                          item.image)),
+                                          GestureDetector(
+                                            onTap: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (_) =>
+                                                          item.page));
+                                            },
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                Container(
+                                                  width: 45,
+                                                  height: 50,
+                                                  decoration: BoxDecoration(
+                                                      color: ColorLibrary
+                                                          .primaryGreenDark,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              4)),
+                                                  child: Center(
+                                                    child: Image(
+                                                        width: 25,
+                                                        height: 25,
+                                                        image: AssetImage(
+                                                            item.image)),
+                                                  ),
                                                 ),
-                                              ),
-                                              SizedBox(
-                                                height: 5.0,
-                                              ),
-                                              Container(
-                                                width: 50,
-                                                child: Text(item.text,
-                                                    textAlign: TextAlign.center,
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .bodyText1!
-                                                        .copyWith(
-                                                            color:
-                                                                Colors.white)),
-                                              )
-                                            ],
+                                                SizedBox(
+                                                  height: 5.0,
+                                                ),
+                                                Container(
+                                                  width: 50,
+                                                  child: Text(item.text,
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .bodyText1!
+                                                          .copyWith(
+                                                              color: Colors
+                                                                  .white)),
+                                                )
+                                              ],
+                                            ),
                                           )
                                       ],
                                     )
@@ -181,7 +197,7 @@ class _HomeState extends State<Home> {
                                 topLeft: Radius.circular(20),
                                 topRight: Radius.circular(20))),
                         width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height - 480,
+                        height: MediaQuery.of(context).size.height - 350,
                         child: Column(
                           children: [
                             Row(
@@ -208,8 +224,8 @@ class _HomeState extends State<Home> {
                                 ]),
                             SizedBox(height: 20.0),
                             Container(
-                              height: 240,
-                              padding: EdgeInsets.only(bottom: 5.0),
+                              height: 315,
+                              padding: EdgeInsets.only(bottom: 10.0),
                               width: double.infinity,
                               child: ListView.separated(
                                   shrinkWrap: true,
@@ -219,183 +235,227 @@ class _HomeState extends State<Home> {
                                     return Container(
                                         width: double.infinity,
                                         height: 145,
-                                        child: Row(children: [
-                                          Container(
-                                              width: 83,
-                                              height: 135,
-                                              padding: EdgeInsets.all(8),
-                                              decoration: BoxDecoration(
-                                                  color: ColorLibrary
-                                                      .dateContainer,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          10)),
-                                              child: Column(
+                                        child: LayoutBuilder(
+                                          builder: (_, constraints) {
+                                            print(constraints.maxWidth);
+                                            return Row(
                                                 mainAxisAlignment:
                                                     MainAxisAlignment
                                                         .spaceBetween,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
                                                 children: [
-                                                  Text('15:00 AM',
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .headline4),
-                                                  Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Text('24 SEPT',
-                                                          style: Theme.of(
-                                                                  context)
-                                                              .textTheme
-                                                              .caption!
-                                                              .copyWith(
-                                                                  height: 1.3,
-                                                                  fontSize: 16,
-                                                                  letterSpacing:
-                                                                      0.5)),
-                                                      Text('2020',
-                                                          style: Theme.of(
-                                                                  context)
-                                                              .textTheme
-                                                              .caption!
-                                                              .copyWith(
-                                                                  height: 1.3,
-                                                                  fontSize: 20,
-                                                                  letterSpacing:
-                                                                      3.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w900))
-                                                    ],
-                                                  )
-                                                ],
-                                              )),
-                                          SizedBox(width: 16.0),
-                                          Container(
-                                            padding: EdgeInsets.only(top: 10),
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Column(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text('Prayer summit Day 5',
-                                                        style: Theme.of(context)
-                                                            .textTheme
-                                                            .headline2),
-                                                    SizedBox(height: 5.0),
-                                                    Container(
-                                                      width: 200,
-                                                      child: Text(
-                                                          'Join us this friday as we lif up our voice to the king of kings in worship',
-                                                          style: Theme.of(
-                                                                  context)
-                                                              .textTheme
-                                                              .bodyText1!
-                                                              .copyWith(
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w400,
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: ColorLibrary
-                                                                      .textMuted)),
-                                                    ),
-                                                  ],
-                                                ),
-                                                Column(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Row(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .center,
+                                                  Expanded(
+                                                    child: Container(
+                                                        // width: 83,
+                                                        height: 135,
+                                                        padding:
+                                                            EdgeInsets.all(8),
+                                                        decoration: BoxDecoration(
+                                                            color: ColorLibrary
+                                                                .dateContainer,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10)),
+                                                        child: Column(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
+                                                          children: [
+                                                            Text('15:00 AM',
+                                                                style: Theme.of(
+                                                                        context)
+                                                                    .textTheme
+                                                                    .headline4),
+                                                            Column(
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                Text('24 SEPT',
+                                                                    style: Theme.of(
+                                                                            context)
+                                                                        .textTheme
+                                                                        .caption!
+                                                                        .copyWith(
+                                                                            height:
+                                                                                1.3,
+                                                                            fontSize:
+                                                                                16,
+                                                                            letterSpacing:
+                                                                                0.5)),
+                                                                Text('2020',
+                                                                    style: Theme.of(context).textTheme.caption!.copyWith(
+                                                                        height:
+                                                                            1.3,
+                                                                        fontSize:
+                                                                            20,
+                                                                        letterSpacing:
+                                                                            3.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w900))
+                                                              ],
+                                                            )
+                                                          ],
+                                                        )),
+                                                  ),
+                                                  SizedBox(width: 16.0),
+                                                  Container(
+                                                    padding: EdgeInsets.only(
+                                                        top: 10),
+                                                    child: Column(
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
+                                                              .spaceBetween,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
                                                               .start,
                                                       children: [
-                                                        Image(
-                                                            image: AssetImage(
-                                                              'assets/images/location.png',
-                                                            ),
-                                                            width: 10,
-                                                            height: 10),
-                                                        SizedBox(width: 7.0),
-                                                        Text('Church premises',
-                                                            style: Theme.of(
-                                                                    context)
-                                                                .textTheme
-                                                                .bodyText1!
-                                                                .copyWith(
-                                                                    color: ColorLibrary
-                                                                        .primaryGreen))
-                                                      ],
-                                                    ),
-                                                    SizedBox(height: 5.0),
-                                                    Row(
-                                                      children: [
-                                                        Container(
-                                                            width: 148,
-                                                            height: 31,
-                                                            decoration: BoxDecoration(
-                                                                color: ColorLibrary
-                                                                    .primaryGreen,
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            5.0)),
-                                                            child: Center(
+                                                        Column(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                                'Prayer summit Day 5',
+                                                                style: Theme.of(
+                                                                        context)
+                                                                    .textTheme
+                                                                    .headline2),
+                                                            SizedBox(
+                                                                height: 5.0),
+                                                            Container(
+                                                              width: constraints
+                                                                      .maxWidth -
+                                                                  120,
                                                               child: Text(
-                                                                  'View Event',
+                                                                  'Join us this friday as we lif up our voice to the king of kings in worship',
                                                                   style: Theme.of(
                                                                           context)
                                                                       .textTheme
-                                                                      .button),
-                                                            )),
-                                                        SizedBox(width: 3.0),
-                                                        // the button,
-                                                        // the switcher
-                                                        FlutterSwitch(
-                                                          activeColor:
-                                                              ColorLibrary
-                                                                  .toggleGreen,
-                                                          width: 56.0,
-                                                          height: 24.0,
-                                                          toggleSize: 25.0,
-                                                          activeToggleColor:
-                                                              Colors.white,
-                                                          inactiveToggleColor:
-                                                              ColorLibrary
-                                                                  .toggleGreen,
-                                                          value: isFalse,
-                                                          inactiveColor:
-                                                              Color(0xffEDF6FF),
-                                                          borderRadius: 30.0,
-                                                          padding: 4.0,
-                                                          onToggle: (val) {
-                                                            setState(() {
-                                                              isFalse = val;
-                                                            });
-                                                          },
+                                                                      .bodyText1!
+                                                                      .copyWith(
+                                                                          fontWeight: FontWeight
+                                                                              .w400,
+                                                                          fontFamily:
+                                                                              'Poppins',
+                                                                          color:
+                                                                              ColorLibrary.textMuted)),
+                                                            ),
+                                                          ],
                                                         ),
+                                                        Container(
+                                                          padding:
+                                                              EdgeInsets.only(
+                                                                  bottom: 15),
+                                                          child: Column(
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .start,
+                                                            children: [
+                                                              Row(
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .center,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .start,
+                                                                children: [
+                                                                  Image(
+                                                                      image:
+                                                                          AssetImage(
+                                                                        'assets/images/location.png',
+                                                                      ),
+                                                                      width: 10,
+                                                                      height:
+                                                                          10),
+                                                                  SizedBox(
+                                                                      width:
+                                                                          7.0),
+                                                                  Text(
+                                                                      'Church premises',
+                                                                      style: Theme.of(
+                                                                              context)
+                                                                          .textTheme
+                                                                          .bodyText1!
+                                                                          .copyWith(
+                                                                              color: ColorLibrary.primaryGreen))
+                                                                ],
+                                                              ),
+                                                              SizedBox(
+                                                                  height: 5.0),
+                                                              Row(
+                                                                children: [
+                                                                  Container(
+                                                                      width:
+                                                                          148,
+                                                                      height:
+                                                                          31,
+                                                                      decoration: BoxDecoration(
+                                                                          color: ColorLibrary
+                                                                              .primaryGreen,
+                                                                          borderRadius: BorderRadius.circular(
+                                                                              5.0)),
+                                                                      child:
+                                                                          Center(
+                                                                        child: Text(
+                                                                            'View Event',
+                                                                            style:
+                                                                                Theme.of(context).textTheme.button),
+                                                                      )),
+                                                                  SizedBox(
+                                                                      width:
+                                                                          3.0),
+                                                                  // the button,
+                                                                  // the switcher
+                                                                  FlutterSwitch(
+                                                                    activeColor:
+                                                                        ColorLibrary
+                                                                            .toggleGreen,
+                                                                    width: 56.0,
+                                                                    height:
+                                                                        24.0,
+                                                                    toggleSize:
+                                                                        25.0,
+                                                                    activeToggleColor:
+                                                                        Colors
+                                                                            .white,
+                                                                    inactiveToggleColor:
+                                                                        ColorLibrary
+                                                                            .toggleGreen,
+                                                                    value:
+                                                                        isFalse,
+                                                                    inactiveColor:
+                                                                        Color(
+                                                                            0xffEDF6FF),
+                                                                    borderRadius:
+                                                                        30.0,
+                                                                    padding:
+                                                                        4.0,
+                                                                    onToggle:
+                                                                        (val) {
+                                                                      setState(
+                                                                          () {
+                                                                        isFalse =
+                                                                            val;
+                                                                      });
+                                                                    },
+                                                                  ),
+                                                                ],
+                                                              )
+                                                            ],
+                                                          ),
+                                                        )
                                                       ],
-                                                    )
-                                                  ],
-                                                )
-                                              ],
-                                            ),
-                                          )
-                                        ]));
+                                                    ),
+                                                  )
+                                                ]);
+                                          },
+                                        ));
                                   },
                                   separatorBuilder: (context, _) => Divider(
-                                        height: 30,
+                                        height: 25,
                                         color: ColorLibrary.dividerColor,
                                       ),
                                   itemCount: 3),

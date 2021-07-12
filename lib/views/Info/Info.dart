@@ -15,7 +15,6 @@ class _InfoState extends State<Info> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: IconButton(icon: Icon(Icons.arrow_back), onPressed: () {}),
           title: Text('Info Board',
               style: Theme.of(context).appBarTheme.textTheme?.headline1),
           centerTitle: true,
@@ -25,8 +24,8 @@ class _InfoState extends State<Info> {
             padding: EdgeInsets.only(top: 10, left: 12.0, right: 15),
             child: LayoutBuilder(
               builder: (_, constraints) {
-                print(constraints.maxWidth);
-                print(constraints.maxHeight);
+                //(constraints.maxWidth);
+                //(constraints.maxHeight);
                 double maxWidth = constraints.maxWidth;
                 double containerWidth = maxWidth / 2 - 5;
                 return Row(
@@ -38,6 +37,7 @@ class _InfoState extends State<Info> {
                       decoration: BoxDecoration(
                           color: ColorLibrary.textMuted,
                           image: DecorationImage(
+                              fit: BoxFit.cover,
                               image: AssetImage('assets/images/worship.png')),
                           borderRadius: BorderRadius.circular(13)),
                       child: Stack(
@@ -95,6 +95,7 @@ class _InfoState extends State<Info> {
                       decoration: BoxDecoration(
                           color: ColorLibrary.textMuted,
                           image: DecorationImage(
+                              fit: BoxFit.cover,
                               image:
                                   AssetImage('assets/images/calculator.png')),
                           borderRadius: BorderRadius.circular(13)),

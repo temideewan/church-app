@@ -244,7 +244,7 @@ class _SecondEventsState extends State<SecondEvents> {
                         color: ColorLibrary.primaryGreen,
                         borderRadius: BorderRadius.circular(17.5)),
                     child: Center(
-                        child: Text('Set Up Reminder',
+                        child: Text('Remind me',
                             style: Theme.of(context)
                                 .textTheme
                                 .headline3!
